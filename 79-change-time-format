@@ -19,6 +19,7 @@ public String changeTimeFormat(String strTime) {
     }
     if(hours == 00){
         hours + 12;
-        return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' AM';
+        
     }
+    return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' AM';
 }
