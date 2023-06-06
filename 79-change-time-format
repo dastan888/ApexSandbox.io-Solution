@@ -6,20 +6,33 @@ public String changeTimeFormat(String strTime) {
 
     Integer minutes = Integer.valueOf(parts[1]);
 
+    String[] parts = strTime.split(':');
 
-    if(hours < 12 && hours != 00){
-        return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' AM';
+    Integer hours = Integer.valueOf(parts[0]);
+
+    Integer minutes = Integer.valueOf(parts[1]);
+
+    String suffix = ' AM';
+
+    if (hours == 12) suffix = ' PM';
+
+    if (hours > 12) { 
+
+        suffix = ' PM';
+
+        hours -= 12;
+
     }
-    if(hours > 12 ){
-        hours - 12;
-        return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' PM';
+
+    if (hours == 0) {
+
+        hours = 12;
+
     }
-    if(hours == 12){
-        return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' PM';
-    }
-    if(hours == 00){
-        hours + 12;
-        
-    }
-    return String.valueOf(hours) + ':' + String.valueOf(minutes) + ' AM';
+
+    String strHours = String.valueOf(hours);
+
+    if (strHours.length() == 1) strHours = '0' + strHours;
+
+    return strHours + ':' + parts[1] + suffix;
 }
