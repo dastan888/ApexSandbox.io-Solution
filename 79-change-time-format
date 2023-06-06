@@ -1,0 +1,5 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+     Datetime datetimeValue = Datetime.parse('1970-01-01 ' + strTime + ':00');
+    return datetimeValue.format('hh:mm a');
+}
