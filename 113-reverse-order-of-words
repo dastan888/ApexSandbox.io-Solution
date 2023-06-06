@@ -1,4 +1,24 @@
 public String reverseWordsInASentence(String sentence){
     //your flawless code here
-    
+       if(sentence==null)
+
+        {
+
+            return sentence;
+
+        }
+
+        String[] str = sentence.split(' ');
+
+        String s='';
+
+        for(Integer i = str.size()-1;i>=0;i--)
+
+        {
+
+          s += str[i]+' ';
+
+        }    
+
+        return s.trim();  
 }
