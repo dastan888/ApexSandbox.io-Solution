@@ -1,5 +1,21 @@
 public String changeTimeFormat(String strTime) {
     //code here
-     Datetime datetimeValue = Datetime.parse('1970-01-01 ' + strTime + ':00');
-    return datetimeValue.format('hh:mm a');
+    String[] parts = strTime.split(':');
+
+    Integer hours = Integer.valueOf(parts[0]);
+
+    Integer minutes = Integer.valueOf(parts[1]);
+
+
+    if(hours < 12 && hours != 00){
+        return hours + ':' + minutes + ' AM';
+    }
+    if(hours > 12 ){
+        hours - 12;
+        return hours + ':' + minutes + ' PM';
+    }
+    if(hours == 00){
+        hours + 12;
+        return hours + ':' + minutes + ' AM';
+    }
 }
