@@ -1,0 +1,20 @@
+public Integer nextPrime(Integer num) {
+    //code here
+    if (num < 2) return 2;
+
+    num++;
+
+    for (Integer i = 2; i<num; i++ ) {
+
+        if ( Math.mod(num,i) == 0 ) {
+
+            num++;
+
+            i = 2;
+
+        }
+
+    }
+
+    return num;
+}
