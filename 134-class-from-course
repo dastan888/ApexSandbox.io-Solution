@@ -1,0 +1,13 @@
+public Id classFromCourse(String courseName) {
+    // code here
+    apxio__Course__c course = [SELECT Name FROM apxio__Course__c WHERE Name =:courseName];
+    if(course == null){
+        return null;
+    } else {
+        apxio__Class__c clas = new apxio__Class__c(
+            apxio__Course__c = course.Id
+        )
+        insert clas;
+        return clas.Id;
+    }
+}
