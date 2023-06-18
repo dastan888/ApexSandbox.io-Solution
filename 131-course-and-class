@@ -1,7 +1,7 @@
 public void createCourseAndClass(String name, String description) {
     // code here
     apxio__Course__c course = new apxio__Course__c(
-        Name = name,
+        Name = name
         if(description != null){
             apxio__Course_Details__c = description;
         }
@@ -9,7 +9,7 @@ public void createCourseAndClass(String name, String description) {
     insert course;
     apxio__Class__c class1 = new apxio__Class__c(
         Name = name,
-        apxio__Course__c = course.Id,
+        apxio__Course__c = course.Id
         if(description != null){
             apxio__Description__c = description.left(255);
         }
